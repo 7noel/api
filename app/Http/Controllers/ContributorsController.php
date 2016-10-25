@@ -14,7 +14,14 @@ class ContributorsController extends Controller {
 	{
 		$c=Contributor::where('ruc',$ruc)->first();
 
-		return response()->json([ 'ruc' => $c->ruc, 'razon_social' => $c->razon_social, 'direccion' => $this->direccion($c), 'ubigeo' => $c->ubigeo]);
+		return response()->json([
+			'ruc' => $c->ruc,
+			'razon_social' => $c->razon_social,
+			'estado'=>$c->estado,
+			'condicion_domicilio'=>$c->condicion_domicilio,
+			'direccion' => $this->direccion($c),
+			'ubigeo' => $c->ubigeo,
+		]);
 	}
 
 	protected function direccion($c){
