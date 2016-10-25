@@ -12,16 +12,19 @@ class ContributorsController extends Controller {
 
 	public function index($ruc)
 	{
-		$c=Contributor::where('ruc',$ruc)->first();
+		if ($c=Contributor::where('ruc',$ruc)->first()) {
+			return response()->json([
+					'ruc' => $c->ruc,
+					'razon_social' => $c->razon_social,
+					'estado' => $c->estado,
+					'condicion_domicilio' => $c->condicion_domicilio,
+					'direccion' => $this->direccion($c),
+					'ubigeo' => $c->ubigeo,
+				]);
+		}
+		
+		return response()->json(null);
 
-		return response()->json([
-			'ruc' => $c->ruc,
-			'razon_social' => $c->razon_social,
-			'estado'=>$c->estado,
-			'condicion_domicilio'=>$c->condicion_domicilio,
-			'direccion' => $this->direccion($c),
-			'ubigeo' => $c->ubigeo,
-		]);
 	}
 
 	protected function direccion($c){
