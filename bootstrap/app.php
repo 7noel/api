@@ -66,6 +66,9 @@ $app->singleton(
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
+$app->routeMiddleware([
+    'cors' => 'palanik\lumen\Middleware\LumenCors',
+]);
 
 /*
 |--------------------------------------------------------------------------
