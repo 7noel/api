@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Contributor;
+use App\Ubigeo;
 
 
 class ContributorsController extends Controller {
@@ -19,7 +20,7 @@ class ContributorsController extends Controller {
 					'estado' => $c->estado,
 					'condicion_domicilio' => $c->condicion_domicilio,
 					'direccion' => $this->direccion($c),
-					'ubigeo' => $c->ubigeo,
+					'ubigeo' => Ubigeo::where('code', $c->ubigeo)->first()->toArray(),
 				]);
 		}
 		

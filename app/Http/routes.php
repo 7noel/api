@@ -16,4 +16,4 @@ use App\User;
 $app->get('/', function () use ($app) {
     return $app->version();
 });
-$app->get('/api/ruc/{ruc}', ['middleware' => 'cors', 'as' => 'ruc', 'uses' => 'ContributorsController@index']);
+$app->get('/padron/ruc/{ruc}', ['middleware' => 'cors', 'as' => 'ruc', 'uses' => 'ContributorsController@index']);
