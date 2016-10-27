@@ -30,6 +30,6 @@ class SunatExchangesController extends Controller {
 	public function validateDate($date, $format)
 	{
 		$d = \DateTime::createFromFormat($format, $date);
-		return $d && $d->format('Y-m-d') === $date;
+		return $d && $d->format($format) === $date;
 	}
 }
