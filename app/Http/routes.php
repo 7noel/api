@@ -16,6 +16,9 @@ use App\User;
 $app->get('/', function () use ($app) {
     return $app->version();
 });
-$app->get('/padron/ruc/{ruc}', ['middleware' => 'cors', 'as' => 'ruc', 'uses' => 'ContributorsController@index']);
-$app->get('/exchanges/date/{fecha}', ['middleware' => 'cors', 'as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
-$app->get('/exchanges/month/{month}', ['middleware' => 'cors', 'as' => 'exchangesGetByMonth', 'uses' => 'SunatExchangesController@getByMonth']);
+
+$app->group(['prefix' => 'sunat', 'middleware' => 'cors', 'namespace' => 'App\Http\Controllers'], function () use ($app) {
+	$app->get('ruc/{ruc}', ['as' => 'ruc', 'uses' => 'ContributorsController@index']);
+	$app->get('exchanges_date/{fecha}', ['as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
+	$app->get('exchanges_month/{month}', ['as' => 'exchangesGetByMonth', 'uses' => 'SunatExchangesController@getByMonth']);
+});
