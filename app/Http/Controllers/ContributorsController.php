@@ -48,12 +48,11 @@ class ContributorsController extends Controller {
 			$d .= ' INT. '.$c->interior;
 		}
 		if ($c->tipo_zona != '-') {
-			if ($c->codigo_zona = '----') {
+			if ($c->codigo_zona == '----') {
 				$d .= ' '.$c->tipo_zona;
 			} else {
 				$d .= ' '.$c->codigo_zona.' '.$c->tipo_zona;
 			}
-			
 		}
 		return $d;
 	}
