@@ -1,0 +1,38 @@
+#install ruby gem and activerecord mysql2
+
+sudo apt-get install ruby-full
+sudo gem update --system
+sudo gem install activerecord
+
+
+#How to install Laravel in Ubuntu 16.04
+
+#basic stuff install (optional)
+
+sudo apt-get install git
+sudo apt-get install zip
+
+#LAMP
+
+sudo apt-get install tasksel
+sudo tasksel install lamp-server
+
+#CURL
+
+sudo apt-get install curl php-curl php-mcrypt php-mbstring php-gettext
+
+#enable mods
+
+sudo phpenmod mcrypt
+sudo phpenmod mbstring
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+#Composer
+
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+#install phpmyadmin
+
+sudo apt-get install phpmyadmin
