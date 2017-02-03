@@ -20,5 +20,6 @@ $app->get('/', function () use ($app) {
 $app->group(['prefix' => 'sunat', 'middleware' => 'cors'], function () use ($app) {
 	$app->get('ruc/{ruc}', ['as' => 'ruc', 'uses' => 'ContributorsController@index']);
 	$app->get('exchanges_date/{fecha}', ['as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
+	$app->get('exchanges_from/{fecha}', ['as' => 'exchangesGetFromDate', 'uses' => 'SunatExchangesController@getFromDate']);
 	$app->get('exchanges_month/{month}', ['as' => 'exchangesGetByMonth', 'uses' => 'SunatExchangesController@getByMonth']);
 });
