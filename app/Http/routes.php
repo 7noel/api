@@ -22,5 +22,4 @@ $app->group(['prefix' => 'sunat', 'middleware' => 'cors'], function () use ($app
 	$app->get('exchanges_date/{fecha}', ['as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
 	$app->get('exchanges_from/{fecha}', ['as' => 'exchangesGetFromDate', 'uses' => 'SunatExchangesController@getFromDate']);
 	$app->get('exchanges_month/{month}', ['as' => 'exchangesGetByMonth', 'uses' => 'SunatExchangesController@getByMonth']);
-	//$app->get('exchanges_from/{date}', ['as' => 'exchangesGetFromDate', 'uses' => 'SunatExchangesController@getFromDate']);
 });

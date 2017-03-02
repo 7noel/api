@@ -36,14 +36,6 @@ class SunatExchangesController extends Controller {
 		return response()->json(SunatExchange::where('fecha', '<=', $month.'-31')->where('fecha', '>=', $month.'-01')->orderBy('fecha')->get());
 	}
 
-	public function getFromDate($date)
-	{
-		if (!$this->validateDate($date, 'Y-m-d')) {
-			return response()->json(null);
-		}
-		return response()->json(SunatExchange::where('fecha', '>', $date)->orderBy('fecha','asc')->get());
-	}
-
 	public function validateDate($date, $format)
 	{
 		$d = \DateTime::createFromFormat($format, $date);
