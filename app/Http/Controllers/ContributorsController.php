@@ -34,7 +34,10 @@ class ContributorsController extends Controller {
 			$d = $c->tipo_via.' '.$c->nombre_via;
 			if ($c->numero != '-') {
 				$d .= ' NRO.'.$c->numero;
-			} else {
+			} else if ($c->manzana != '-') {
+				$d .= ' MZA. '.$c->manzana.' LOTE '.$c->lote;
+			}
+			else {
 				$d .= ' KM.'.$c->kilometro;
 			}
 			
