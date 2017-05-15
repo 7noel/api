@@ -3,7 +3,12 @@
 sudo apt-get install ruby-full
 sudo gem update --system
 sudo gem install activerecord
-
+sudo gem install mysql2
+sudo apt-get install libmysql-ruby
+sudo apt-get install libmysqlclient-dev
+sudo gem install nokogiri
+sudo apt-get install build-essential patch
+sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
 
 #How to install Laravel in Ubuntu 16.04
 
@@ -36,3 +41,9 @@ sudo mv composer.phar /usr/local/bin/composer
 #install phpmyadmin
 
 sudo apt-get install phpmyadmin
+
+#config virtualhost
+sudo cp /var/www/api.noelhh.com/ubuntu_config/api.noelhh.com.conf /etc/apache2/sites-available/api.noelhh.com.conf
+sudo a2ensite api.noelhh.com.conf
+sudo a2dissite 000-default.conf
+sudo systemctl restart apache2
