@@ -33,7 +33,7 @@ class ContributorsController extends Controller {
 		if ($c->nombre_via != '-') {
 			$d = $c->tipo_via.' '.$c->nombre_via;
 			if ($c->numero != '-') {
-				$d .= ' NRO.'.$c->numero;
+				$d .= ' NRO. '.$c->numero;
 			} else if ($c->manzana != '-') {
 				$d .= ' MZA. '.$c->manzana.' LOTE '.$c->lote;
 			}
