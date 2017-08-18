@@ -40,7 +40,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 #install phpmyadmin
 
-sudo apt-get install phpmyadmin
+sudo apt-get install phpmyadmin php-mbstring php-gettext
 
 #config virtualhost
 sudo cp /var/www/api.noelhh.com/ubuntu_config/api.noelhh.com.conf /etc/apache2/sites-available/api.noelhh.com.conf
