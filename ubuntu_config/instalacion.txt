@@ -3,12 +3,12 @@
 sudo apt-get install ruby-full
 sudo gem update --system
 sudo gem install activerecord
-sudo gem install mysql2
 sudo apt-get install libmysql-ruby
 sudo apt-get install libmysqlclient-dev
-sudo gem install nokogiri
+sudo gem install mysql2
 sudo apt-get install build-essential patch
 sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
+sudo gem install nokogiri
 
 #How to install Laravel in Ubuntu 16.04
 
@@ -44,6 +44,12 @@ sudo apt-get install phpmyadmin php-mbstring php-gettext
 
 #config virtualhost
 sudo cp /var/www/api.noelhh.com/ubuntu_config/api.noelhh.com.conf /etc/apache2/sites-available/api.noelhh.com.conf
-sudo a2ensite api.noelhh.com.conf
+sudo a2ensite apisunat.ddns.net.conf
+sudo a2ensite ddmedical.ddns.net.conf
+sudo a2ensite awsnoel.ddns.net.conf
 sudo a2dissite 000-default.conf
 sudo systemctl restart apache2
+
+sudo git init
+sudo git remote add origin https://github.com/7noel/api.git
+sudo git pull origin master
