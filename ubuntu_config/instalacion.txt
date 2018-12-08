@@ -44,12 +44,13 @@ sudo apt-get install phpmyadmin php-mbstring php-gettext
 
 #config virtualhost
 sudo cp /var/www/api.noelhh.com/ubuntu_config/api.noelhh.com.conf /etc/apache2/sites-available/api.noelhh.com.conf
-sudo a2ensite apisunat.ddns.net.conf
-sudo a2ensite ddmedical.ddns.net.conf
-sudo a2ensite awsnoel.ddns.net.conf
-sudo a2dissite 000-default.conf
+sudo a2ensite api.noelhh.com.conf
+sudo a2ensite web.conf
+sudo a2dissite api.noelhh.com.conf
 sudo systemctl restart apache2
 
 sudo git init
 sudo git remote add origin https://github.com/7noel/api.git
 sudo git pull origin master
+
+sudo apt-get -y install language-pack-es

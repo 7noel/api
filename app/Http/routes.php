@@ -17,6 +17,10 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
+$app->get('/key', function() {
+    return str_random(32);
+});
+
 $app->group(['prefix' => 'sunat', 'middleware' => 'cors'], function () use ($app) {
 	$app->get('ruc/{ruc}', ['as' => 'ruc', 'uses' => 'ContributorsController@index']);
 	$app->get('exchanges_date/{fecha}', ['as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
