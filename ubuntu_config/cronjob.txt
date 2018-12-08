@@ -1,1 +1,3 @@
-cronjob.txt
+0 20 * * * sudo sh /home/ubuntu/padron/update.sh
+*/60 * * * * sudo sh /home/ubuntu/padron/sunat_exchanges.sh
+0 22 * * 0 sudo sh /home/ubuntu/padron/padron.sh
