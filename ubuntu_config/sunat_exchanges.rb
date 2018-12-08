@@ -28,7 +28,7 @@ end
 
 # Desde el mes previo
 year = Date.today.prev_month.strftime("%Y")
-month = Date.today.strftime("%m")
+month = Date.today.prev_month.strftime("%m")
 if (last_date = SunatExchange.where("fecha like '#{year}-#{month}%'").order(fecha: :desc).first)
     last_day = last_date.fecha.mday
 else
