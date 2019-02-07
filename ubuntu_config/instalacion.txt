@@ -26,6 +26,7 @@ sudo tasksel install lamp-server
 
 sudo apt-get install curl php-curl php-mcrypt php-mbstring php-gettext
 
+
 #enable mods
 
 sudo phpenmod mcrypt
