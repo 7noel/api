@@ -86,6 +86,8 @@ $app->routeMiddleware([
     'cors' => 'palanik\lumen\Middleware\LumenCors',
 ]);
 
+$app->withEloquent();
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

@@ -5,10 +5,10 @@ sudo gem update --system
 sudo gem install activerecord
 sudo apt-get install libmysql-ruby
 sudo apt-get install libmysqlclient-dev
-sudo gem install mysql2
 sudo apt-get install build-essential patch
 sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
 sudo gem install nokogiri
+sudo gem install mysql2
 
 #How to install Laravel in Ubuntu 16.04
 
