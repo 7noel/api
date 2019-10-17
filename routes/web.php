@@ -20,6 +20,7 @@ $router->get('/key', function() {
 });
 
 $router->group(['prefix' => 'sunat', 'middleware' => 'cors'], function () use ($router) {
+	$router->get('dni/{ruc}', ['as' => 'dni', 'uses' => 'ContributorsController@dni']);
 	$router->get('ruc/{ruc}', ['as' => 'ruc', 'uses' => 'ContributorsController@index']);
 	$router->get('exchanges_date/{fecha}', ['as' => 'exchangesGetByDay', 'uses' => 'SunatExchangesController@getByDay']);
 	$router->get('exchanges_from/{fecha}', ['as' => 'exchangesGetFromDate', 'uses' => 'SunatExchangesController@getFromDate']);

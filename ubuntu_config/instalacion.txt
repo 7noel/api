@@ -55,3 +55,51 @@ sudo git remote add origin https://github.com/7noel/api.git
 sudo git pull origin master
 
 sudo apt-get -y install language-pack-es
+
+
+====== MYSQL (INICIO)=======
+
+sudo apt install mysql-server
+sudo mysql_secure_installation
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '44243484';
+
+====== MYSQL (FIN)=======
+
+====== PHPMYADMIN (INICIO)=======
+
+sudo apt install phpmyadmin php-mbstring php-gettext
+sudo phpenmod mbstring
+sudo systemctl restart apache2
+
+====== PHPMYADMIN (FIN)=======
+
+====LARAVEL(INICIO)=====
+
+sudo chown -R www-data:www-data /var/www/basf/
+sudo chmod -R 755 /var/www/basf/
+
+====LARAVEL(FIN)=====
+
+====virtualhost(INICIO)====
+sudo vim /etc/apache2/sites-available/basf.conf
+
+<VirtualHost *:80>   
+  ServerAdmin admin@example.com
+     DocumentRoot /var/www/basf/public
+     ServerName pintura.noelhh.com
+
+     <Directory /var/www/basf/public>
+        Options +FollowSymlinks
+        AllowOverride All
+        Require all granted
+     </Directory>
+
+     ErrorLog ${APACHE_LOG_DIR}/error.log
+     CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo a2ensite basf.conf
+sudo a2enmod rewrite
+sudo systemctl restart apache2.service
+====virtualhost(FIN)====

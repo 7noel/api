@@ -60,4 +60,17 @@ class ContributorsController extends Controller {
 		return $d;
 	}
 
+	public function dni($dni)
+	{
+		//dd("sds");
+		$endpoint = "http://intranet.cima.com.pe:3000/api/cimapersonal/consultas/dni/".$dni;
+		$ch = curl_init($endpoint);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$json = json_decode(curl_exec($ch));
+		$json = (isset($json->data->apaterno)) ? $json->data : null ;
+		//dd($json);
+		curl_close($ch);
+		return response()->json($json);
+	}
+
 }
