@@ -76,6 +76,7 @@ class ContributorsController extends Controller {
 		$content = file_get_contents($url);
 		$steps = explode( '<td class="text-left">' , $content );
 		if (isset($steps[3])) {
+			$data['dni'] = $dni;
 			$data['nombres'] = explode("</td>" , $steps[1] )[0];
 			$data['apaterno'] = explode("</td>" , $steps[2] )[0];
 			$data['amaterno'] = explode("</td>" , $steps[3] )[0];
