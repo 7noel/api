@@ -75,7 +75,7 @@ class ContributorsController extends Controller {
 		$url = 'https://eldni.com/pe/buscar-por-dni?dni='.$dni;
 		$content = file_get_contents($url);
 		dd($content);
-		$steps = explode( '<td class="text-left">' , $content );
+		$steps = explode( '<td>' , $content );
 		if (isset($steps[3])) {
 			$data['dni'] = $dni;
 			$data['nombres'] = explode("</td>" , $steps[1] )[0];
