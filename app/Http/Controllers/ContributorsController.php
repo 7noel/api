@@ -74,7 +74,6 @@ class ContributorsController extends Controller {
 		// return response()->json($json);
 		$url = 'https://eldni.com/pe/buscar-por-dni?dni='.$dni;
 		$content = file_get_contents($url);
-		dd($content);
 		$steps = explode( '<td>' , $content );
 		if (isset($steps[3])) {
 			$data['dni'] = $dni;
