@@ -75,11 +75,11 @@ class ContributorsController extends Controller {
 		$url = 'https://eldni.com/pe/buscar-por-dni?dni='.$dni;
 		$content = file_get_contents($url);
 		$steps = explode( '<td>' , $content );
-		if (isset($steps[3])) {
+		if (isset($steps[4])) {
 			$data['dni'] = $dni;
-			$data['nombres'] = explode("</td>" , $steps[1] )[0];
-			$data['apaterno'] = explode("</td>" , $steps[2] )[0];
-			$data['amaterno'] = explode("</td>" , $steps[3] )[0];
+			$data['nombres'] = explode("</td>" , $steps[2] )[0];
+			$data['apaterno'] = explode("</td>" , $steps[3] )[0];
+			$data['amaterno'] = explode("</td>" , $steps[4] )[0];
 			return response()->json($data);
 		}
 		return response()->json(null);
