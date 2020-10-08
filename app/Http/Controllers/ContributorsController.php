@@ -72,7 +72,7 @@ class ContributorsController extends Controller {
 		// //dd($json);
 		// curl_close($ch);
 		// return response()->json($json);
-		$url = 'https://eldni.com/buscar-por-dni?dni='.$dni;
+		$url = 'https://eldni.com/pe/buscar-por-dni?dni='.$dni;
 		$content = file_get_contents($url);
 		$steps = explode( '<td class="text-left">' , $content );
 		if (isset($steps[3])) {
